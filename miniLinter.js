@@ -6,5 +6,12 @@ let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
 const storyWords = story.split(' ');
 
+const betterWords = storyWords.filter(word =>{
+    if (!unnecessaryWords.includes(word)){
+        return word;
+    };
+});
+
 //storyWords.forEach(word => console.log(word));
 console.log(storyWords.length);
+console.log(betterWords.length);

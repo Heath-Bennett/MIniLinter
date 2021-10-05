@@ -4,6 +4,8 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
+let ouCount = 0; 
+
 const storyWords = story.split(' ');
 
 const betterWords = storyWords.filter(word =>{
@@ -12,6 +14,15 @@ const betterWords = storyWords.filter(word =>{
     };
 });
 
+const overusedCount = storyWords.forEach(word => {
+    if (overusedWords.includes(word)){
+        ouCount += 1;
+    };
+    return ouCount;
+});
+
 //storyWords.forEach(word => console.log(word));
 console.log(storyWords.length);
 console.log(betterWords.length);
+overusedCount;
+console.log(`You have ${ouCount} overused words`);

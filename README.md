@@ -1,0 +1,2 @@
+# MIniLinter
+JAVASCRIPT SYNTAX, PART II

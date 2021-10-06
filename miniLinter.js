@@ -27,6 +27,8 @@ const countSentences = storyWords.forEach(word => {
     }
 });
 
+
+
 //storyWords.forEach(word => console.log(word));
 overusedCount;
 countSentences;
@@ -34,3 +36,4 @@ console.log(`There are ${storyWords.length} words in the original paragraph.`);
 console.log(`There are ${betterWords.length} words in the paragraph after the unnecessary words were removed.`);
 console.log(`You have ${ouCount} overused words.`);
 console.log(`The paragraph has ${sentenceCount} sentences.`)
+console.log(betterWords.join(' '));

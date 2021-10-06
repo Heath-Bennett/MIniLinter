@@ -5,6 +5,7 @@ let overusedWords = ['really', 'very', 'basically'];
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
 let ouCount = 0; 
+let sentenceCount = 0;
 
 const storyWords = story.split(' ');
 
@@ -18,11 +19,18 @@ const overusedCount = storyWords.forEach(word => {
     if (overusedWords.includes(word)){
         ouCount += 1;
     };
-    return ouCount;
+});
+
+const countSentences = storyWords.forEach(word => {
+    if (word.charAt(word.length-1) === '.' || word.charAt(word.length-1) === '!'){
+        sentenceCount += 1;
+    }
 });
 
 //storyWords.forEach(word => console.log(word));
 console.log(storyWords.length);
 console.log(betterWords.length);
 overusedCount;
-console.log(`You have ${ouCount} overused words`);
+countSentences;
+console.log(`You have ${ouCount} overused words.`);
+console.log(`The paragraph has ${sentenceCount} sentences.`)

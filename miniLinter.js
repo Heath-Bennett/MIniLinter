@@ -27,13 +27,38 @@ const countSentences = storyWords.forEach(word => {
     }
 });
 
+const wordMinusPunctuation = betterWords.map(word => {
+    if (word.charAt(word.length-1) === '!' || word.charAt(word.length-1) === '.' || word.charAt(word.length-1) ===',' || word.charAt(word.length -1) === '"'){
+        return word.substring(0, word.length - 1).toLowerCase();
+    }
+    else if (word.charAt(0) === '"'){
+        return word.substring(1, word.length).toLowerCase();
+    }
+    else {
+        return word.toLowerCase();
+    }
+    
+});
+
+const mostUsed = wordMinusPunctuation.reduce(function (allWords, word) {
+    if (word in allWords){
+        allWords[word]++
+    }
+    else {
+        allWords[word] = 1
+    }
+    return allWords;
+}, {});
+
 
 
 //storyWords.forEach(word => console.log(word));
 overusedCount;
 countSentences;
+
 console.log(`There are ${storyWords.length} words in the original paragraph.`);
 console.log(`There are ${betterWords.length} words in the paragraph after the unnecessary words were removed.`);
 console.log(`You have ${ouCount} overused words.`);
 console.log(`The paragraph has ${sentenceCount} sentences.`)
 console.log(betterWords.join(' '));
+console.log(mostUsed);
